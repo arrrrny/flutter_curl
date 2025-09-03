@@ -1,3 +1,7 @@
+# 0.7.0
+
+* New Android Curl binary with 16K Page Size support
+
 # 0.6.0
 
 * Removed deprected registerWith handler
