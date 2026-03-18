@@ -18,7 +18,7 @@ public class FlutterCurlPlugin implements FlutterPlugin, MethodCallHandler {
 
   @Override
   public void onAttachedToEngine(@NonNull FlutterPluginBinding flutterPluginBinding) {
-    channel = new MethodChannel(flutterPluginBinding.getFlutterEngine().getDartExecutor(), "flutter_curl");
+    channel = new MethodChannel(flutterPluginBinding.getBinaryMessenger(), "flutter_curl");
     channel.setMethodCallHandler(this);
   }
 

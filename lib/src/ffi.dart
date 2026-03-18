@@ -3,13 +3,13 @@
 part of 'client.dart';
 
 /// [_CURLEasy] holds handle for a single request
-class _CURLEasy extends ffi.Opaque {}
+final class _CURLEasy extends ffi.Opaque {}
 
 /// [_CURLMulti] holds handle to the request queue
-class _CURLMulti extends ffi.Opaque {}
+final class _CURLMulti extends ffi.Opaque {}
 
 /// [_CURLMsg] holds the status about a single request
-class _CURLMsg extends ffi.Struct {
+final class _CURLMsg extends ffi.Struct {
   @ffi.Int32()
   external int messageType;
 
@@ -102,10 +102,10 @@ typedef _curl_easy_strerror_func = ffi.Pointer<Utf8> Function(ffi.Int32);
 typedef _curl_easy_strerror = ffi.Pointer<Utf8> Function(int);
 
 /// [_CURLMime] holds handle for mime context
-class _CURLMime extends ffi.Opaque {}
+final class _CURLMime extends ffi.Opaque {}
 
 /// [_CURLMimePart] holds handle for mime part context
-class _CURLMimePart extends ffi.Opaque {}
+final class _CURLMimePart extends ffi.Opaque {}
 
 typedef _curl_mime_init_func = ffi.Pointer<_CURLMime> Function(
     ffi.Pointer<_CURLEasy>);

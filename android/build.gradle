@@ -4,11 +4,11 @@ version '1.0'
 buildscript {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.4.2'
+        classpath 'com.android.tools.build:gradle:8.7.0'
     }
 }
 
@@ -18,7 +18,7 @@ rootProject.allprojects {
             url "${rootProject.buildDir}/flutter_curl/curlmaven"
         }
         google()
-        jcenter()
+        mavenCentral()
     }
 }
 
@@ -27,7 +27,7 @@ apply plugin: 'com.android.library'
 android {
     namespace "com.ajinasokan.flutter_curl"
 
-    compileSdk 34
+    compileSdk 35
 
     defaultConfig {
         minSdkVersion 16
