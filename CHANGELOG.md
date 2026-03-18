@@ -1,3 +1,7 @@
+# 0.8.0
+
+* Updated Curl binary
+
 # 0.7.0
 
 * New Android Curl binary with 16K Page Size support
