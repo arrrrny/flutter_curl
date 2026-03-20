@@ -191,6 +191,12 @@ class _Engine {
       );
     }
 
+    libCurl.easy_setopt_int(
+      handle,
+      consts.CURLOPT_FOLLOWLOCATION,
+      req.followRedirects! ? 1 : 0,
+    );
+
     // add the headers
     connData[req.id]!.slist = ffi.nullptr;
     String? encodingHeader = "";

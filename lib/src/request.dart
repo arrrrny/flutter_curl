@@ -15,6 +15,7 @@ class Request {
   String? proxy;
   bool? verbose;
   bool? verifySSL;
+  bool? followRedirects;
   List<HTTPVersion>? httpVersions;
 
   String? _cookiePath;
@@ -32,6 +33,7 @@ class Request {
     this.body,
     this.verbose,
     this.verifySSL,
+    this.followRedirects,
     this.httpVersions,
     this.timeout,
     this.connectTimeout,
