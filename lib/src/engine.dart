@@ -197,6 +197,27 @@ class _Engine {
       req.followRedirects! ? 1 : 0,
     );
 
+    if (req.followRedirects!) {
+      // Limit the number of redirects to avoid infinite redirect chains
+      libCurl.easy_setopt_int(
+        handle,
+        consts.CURLOPT_MAXREDIRS,
+        10,
+      );
+
+      // Restrict allowed protocols for initial and redirected requests
+      final allowedProtocols = consts.CURLPROTO_HTTP | consts.CURLPROTO_HTTPS;
+      libCurl.easy_setopt_int(
+        handle,
+        consts.CURLOPT_PROTOCOLS,
+        allowedProtocols,
+      );
+      libCurl.easy_setopt_int(
+        handle,
+        consts.CURLOPT_REDIR_PROTOCOLS,
+        allowedProtocols,
+      );
+    }
     // add the headers
     connData[req.id]!.slist = ffi.nullptr;
     String? encodingHeader = "";
