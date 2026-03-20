@@ -205,17 +205,15 @@ class _Engine {
         10,
       );
 
-      // Restrict allowed protocols for initial and redirected requests
-      final allowedProtocols = consts.CURLPROTO_HTTP | consts.CURLPROTO_HTTPS;
-      libCurl.easy_setopt_int(
+      libCurl.easy_setopt_string(
         handle,
-        consts.CURLOPT_PROTOCOLS,
-        allowedProtocols,
+        consts.CURLOPT_REDIR_PROTOCOLS_STR,
+        "http,https".toNativeUtf8(),
       );
-      libCurl.easy_setopt_int(
+      libCurl.easy_setopt_string(
         handle,
-        consts.CURLOPT_REDIR_PROTOCOLS,
-        allowedProtocols,
+        consts.CURLOPT_PROTOCOLS_STR,
+        "http,https".toNativeUtf8(),
       );
     }
     // add the headers
